@@ -41,15 +41,33 @@ const posters = ref([
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(6, 1fr);
+}
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .poster {
-  cursor: pointer;
+  cursor: none;
 }
 .poster h1 {
+  margin-top: 10px;
   font-size: 1.3rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.poster h1:hover {
+  text-decoration: underline;
 }
 .poster img {
   width: 100%;
+  filter: grayscale(1);
+  transition: filter 1s;
+}
+.poster img:hover {
+  filter: grayscale(0);
 }
 </style>
